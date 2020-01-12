@@ -6,7 +6,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans">
     <title>Medusa</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="locale" content="{{ App::getLocale() }}"/>

@@ -99,19 +99,6 @@ button:focus {
   line-height: 24px;
 }
 
-.btn-medusa {
-  background: #EFF9FF;
-  color: #7FC7EF;
-  font-size: 16px;
-  width: 100px;
-  font-weight: bold;
-  padding: 0;
-}
-
-.btn-medusa:hover {
-  color: #7FC7EF;
-}
-
 .show {
   display: block;
 }
@@ -131,65 +118,6 @@ select:not(:focus):invalid {
 
 .scroll::-webkit-scrollbar {
   display: none;
-}
-
-::-webkit-input-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #C3C3C3;
-  opacity: 1;
-  /* Firefox */
-}
-
-::-moz-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #C3C3C3;
-  opacity: 1;
-  /* Firefox */
-}
-
-:-ms-input-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #C3C3C3;
-  opacity: 1;
-  /* Firefox */
-}
-
-::-ms-input-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #C3C3C3;
-  opacity: 1;
-  /* Firefox */
-}
-
-::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #C3C3C3;
-  opacity: 1;
-  /* Firefox */
-}
-
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: #C3C3C3;
-}
-
-::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: #C3C3C3;
-}
-
-::-webkit-input-placeholder {
-  /* Edge */
-  color: #C3C3C3;
-}
-
-.form-control {
-  font-size: 14px;
-  font-family: "Roboto Medium", sans-serif;
-}
-
-.bg-red {
-  background: #FF6F66 !important;
 }
 
 .loader-wrapper {
@@ -305,6 +233,185 @@ select:not(:focus):invalid {
     transform: rotate(360deg);
     /* Firefox 16+, IE 10+, Opera */
   }
+}
+
+.wrap-admin input::-webkit-input-placeholder, .wrap-admin textarea::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #C3C3C3;
+  opacity: 1;
+  /* Firefox */
+  font-weight: normal;
+}
+
+.wrap-admin input::-moz-placeholder, .wrap-admin textarea::-moz-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #C3C3C3;
+  opacity: 1;
+  /* Firefox */
+  font-weight: normal;
+}
+
+.wrap-admin input:-ms-input-placeholder, .wrap-admin textarea:-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #C3C3C3;
+  opacity: 1;
+  /* Firefox */
+  font-weight: normal;
+}
+
+.wrap-admin input::-ms-input-placeholder, .wrap-admin textarea::-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #C3C3C3;
+  opacity: 1;
+  /* Firefox */
+  font-weight: normal;
+}
+
+.wrap-admin input::placeholder,
+.wrap-admin textarea::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #C3C3C3;
+  opacity: 1;
+  /* Firefox */
+  font-weight: normal;
+}
+
+.wrap-admin input:-ms-input-placeholder,
+.wrap-admin textarea:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #C3C3C3;
+  font-weight: normal;
+}
+
+.wrap-admin input::-ms-input-placeholder,
+.wrap-admin textarea::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #C3C3C3;
+  font-weight: normal;
+}
+
+.wrap-admin input::-webkit-input-placeholder,
+.wrap-admin textarea::-webkit-input-placeholder {
+  /* Edge */
+  color: #C3C3C3;
+  font-weight: normal;
+}
+
+.wrap-admin .form-group {
+  font-size: 14px;
+  font-family: "Roboto Medium", sans-serif;
+}
+
+.wrap-admin .form-group label {
+  color: #7C7C7C;
+  margin-bottom: 3px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.wrap-admin .btn {
+  width: 100%;
+  background: #f26c61;
+  color: white;
+  height: 50px;
+  font-family: "Noto Sans Bold";
+  font-size: 15px;
+  border: 2px solid !important;
+}
+
+.wrap-admin .btn:hover {
+  background: #FFFFFF;
+  color: #f26c61;
+}
+
+.wrap-admin .btn svg {
+  margin-right: 5px;
+}
+
+.wrap-admin {
+  height: 100%;
+}
+
+.wrap-admin .login-form {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  color: #7C7C7C;
+}
+
+.wrap-admin .login-form .user_card {
+  width: 420px;
+  min-height: 500px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #FCFCFC;
+  position: relative;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 6px;
+}
+
+.wrap-admin .login-form .user_card .form_container {
+  margin-top: 25px;
+  padding: 0 25px;
+}
+
+.wrap-admin .login-form .user_card .form_container input {
+  background-color: #eff3f6 !important;
+  height: 45px;
+}
+
+.wrap-admin .login-form .user_card p {
+  text-align: center;
+  padding-top: 25px;
+  line-height: 20px;
+  font-family: "Roboto Medium", sans-serif;
+  color: #f26c61;
+}
+
+.wrap-admin .login-form .user_card .note-tip {
+  font-size: 10px;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  line-height: 14px;
+  margin-bottom: 3px;
+}
+
+.wrap-admin .login-form .user_card .login_btn,
+.wrap-admin .login-form .user_card .register_btn {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  text-transform: uppercase;
+}
+
+.wrap-admin .login-form .user_card .forget-password {
+  display: -webkit-box;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.wrap-admin .login-form .user_card .forget-password a {
+  padding: 15px 25px;
+  color: #f26c61;
+  text-decoration: underline;
+}
+
+.wrap-admin .login-form .user_card .login_container {
+  padding: 0 2rem;
 }
 
 /*!

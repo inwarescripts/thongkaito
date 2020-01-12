@@ -72,17 +72,6 @@ button:focus {
 	line-height: 24px;
 }
 
-.btn-medusa {
-	background: #EFF9FF;
-	color: $blue-color;
-	font-size: 16px;
-	width: 100px;
-	font-weight: bold;
-	padding: 0;
-	&:hover {
-		color: $blue-color;
-	}
-}
 
 .show {
 	display: block;
@@ -106,31 +95,6 @@ select:not(:focus):invalid {
 	display: none;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-	color: #C3C3C3;
-	opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-	color: #C3C3C3;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-	color: #C3C3C3;
-}
-
-::-webkit-input-placeholder { /* Edge */
-	color: #C3C3C3;
-}
-
-.form-control {
-	font-size: 14px;
-	font-family: $font-roboto-medium;
-}
-
-.bg-red{
-	background: #FF6F66 !important;
-}
 
 //LOADING
 .loader-wrapper {

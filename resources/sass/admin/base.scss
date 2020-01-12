@@ -1,0 +1,61 @@
+.wrap-admin {
+	input,
+	textarea{
+		&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+
+			color: #C3C3C3;
+			opacity: 1; /* Firefox */
+			font-weight: normal;
+		}
+	}
+	input,
+	textarea {
+		&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			color: #C3C3C3;
+			font-weight: normal;
+		}
+	}
+
+	input,
+	textarea {
+		&::-ms-input-placeholder { /* Microsoft Edge */
+			color: #C3C3C3;
+			font-weight: normal;
+		}
+	}
+
+	input,
+	textarea {
+		&::-webkit-input-placeholder { /* Edge */
+			color: #C3C3C3;
+			font-weight: normal;
+		}
+	}
+
+	.form-group {
+		font-size: 14px;
+		font-family: $font-roboto-medium;
+		label {
+			color: $main-text-color;
+			margin-bottom: 3px;
+			font-size: 14px;
+			font-weight: 500;
+		}
+	}
+	.btn{
+		width: 100%;
+		background: $blue-color ;
+		color: white ;
+		height: 50px;
+		font-family: 'Noto Sans Bold';
+		font-size: 15px;
+		border: 2px solid !important;
+		&:hover{
+			background: #FFFFFF ;
+			color: $blue-color ;
+		}
+		svg{
+			margin-right: 5px;
+		}
+	}
+}
