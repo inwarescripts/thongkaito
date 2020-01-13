@@ -11897,8 +11897,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -11929,7 +11927,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 this.$store.commit('set_loading', true);
-                this.$store.dispatch('login', {
+                this.$store.dispatch('adminLogin', {
                   email: this.email,
                   password: this.password
                 }).then(function (result) {
@@ -11937,6 +11935,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                   _this.$router.push('/dashboard');
                 })["catch"](function (error) {
+                  console.log(error);
+
                   _this.$store.commit('set_loading', false);
 
                   _this.validationErrors = error.response.data.errors;
@@ -53132,20 +53132,18 @@ var render = function() {
               [_vm._v("\n                Forgot Password?\n            ")]
             ),
             _vm._v(" "),
-            [
-              _vm.validationErrors
-                ? _c("div", [
-                    _c(
-                      "ul",
-                      { staticClass: "justify-content-center errors" },
-                      _vm._l(_vm.validationErrors, function(value, key, index) {
-                        return _c("li", [_vm._v(_vm._s(value))])
-                      }),
-                      0
-                    )
-                  ])
-                : _vm._e()
-            ]
+            _vm.validationErrors && Object.keys(_vm.validationErrors).length
+              ? [
+                  _c(
+                    "ul",
+                    { staticClass: "justify-content-center error" },
+                    _vm._l(_vm.validationErrors, function(value, key, index) {
+                      return _c("li", [_vm._v(_vm._s(value))])
+                    }),
+                    0
+                  )
+                ]
+              : _vm._e()
           ],
           2
         ),
@@ -70120,7 +70118,7 @@ var routes = [{
     }
   }, {
     path: 'dashboard',
-    name: 'dashboard',
+    name: 'admin.dashboard',
     component: _admin_pages_Home__WEBPACK_IMPORTED_MODULE_4__["default"],
     meta: {
       requiresAuth: false
@@ -70171,6 +70169,7 @@ var modules = requireContext.keys().map(function (file) {
   modules[name] = module;
   return modules;
 }, {});
+console.log(modules);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   modules: modules
 }));
@@ -70185,6 +70184,7 @@ var modules = requireContext.keys().map(function (file) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./admin-auth.js": "./resources/js/store/modules/admin-auth.js",
 	"./loading.js": "./resources/js/store/modules/loading.js"
 };
 
@@ -70207,6 +70207,95 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "./resources/js/store/modules sync .*\\.js$";
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/admin-auth.js":
+/*!**************************************************!*\
+  !*** ./resources/js/store/modules/admin-auth.js ***!
+  \**************************************************/
+/*! exports provided: state, mutations, actions, getters */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "state", function() { return state; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mutations", function() { return mutations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getters", function() { return getters; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+var state = {
+  status: '',
+  admin_token: localStorage.getItem('admin-token') || '',
+  user: {}
+};
+var mutations = {
+  auth_request: function auth_request(state) {
+    state.status = 'loading';
+  },
+  auth_success: function auth_success(state, admin_token) {
+    state.status = 'success';
+    state.admin_token = admin_token;
+  },
+  auth_error: function auth_error(state) {
+    state.status = 'error';
+  },
+  logout: function logout(state) {
+    state.status = '';
+    state.admin_token = '';
+  }
+};
+var actions = {
+  adminLogin: function adminLogin(_ref, _ref2) {
+    var dispatch = _ref.dispatch,
+        commit = _ref.commit;
+    var email = _ref2.email,
+        password = _ref2.password;
+    commit('auth_request');
+    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/admin/login', {
+      email: email,
+      password: password
+    }).then(function (res) {
+      var admin_token = res.data.results.token;
+      localStorage.setItem('admin-token', admin_token);
+      commit('auth_success', admin_token);
+      return res;
+    })["catch"](function (error) {
+      commit('auth_error');
+      localStorage.removeItem('admin-token');
+      throw error;
+    });
+  },
+  logout: function logout(_ref3) {
+    var commit = _ref3.commit;
+
+    if (state.admin_token != null) {
+      return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/logout', {
+        headers: {
+          'Authorization': "Bearer " + state.admin_token
+        }
+      }).then(function (res) {
+        commit('logout');
+        localStorage.removeItem('admin-token');
+        return res;
+      })["catch"](function (error) {
+        commit('logout');
+        localStorage.removeItem('admin-token');
+        throw error;
+      });
+    }
+  }
+};
+var getters = {
+  isLoggedIn: function isLoggedIn(state) {
+    return !!state.admin_token;
+  },
+  authStatus: function authStatus(state) {
+    return state.status;
+  }
+};
 
 /***/ }),
 

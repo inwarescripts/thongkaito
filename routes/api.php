@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
+//ADMIN API
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+	Route::post('/login', 'AuthController@login')->name('api.login');
+	Route::get('/logout', 'AuthController@logout')->name('api.logout');
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+	return $request->user();
 });

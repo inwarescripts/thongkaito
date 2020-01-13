@@ -16,12 +16,10 @@
                 <router-link :to="{ name: 'password.request' }" class="float-right">
                     Forgot Password?
                 </router-link>
-                <template>
-                    <div v-if="validationErrors">
-                        <ul class="justify-content-center errors">
-                            <li v-for="(value, key, index) in validationErrors">{{ value }}</li>
-                        </ul>
-                    </div>
+                <template v-if="validationErrors && Object.keys(validationErrors).length">
+                    <ul class="justify-content-center error">
+                        <li v-for="(value, key, index) in validationErrors">{{ value }}</li>
+                    </ul>
                 </template>
             </div>
             <div class="d-flex justify-content-center mt-3 mb-4 login_container">
@@ -56,10 +54,11 @@
 		methods: {
 			async login() {
 				this.$store.commit('set_loading', true)
-				this.$store.dispatch('login', {email: this.email, password: this.password}).then((result) => {
+				this.$store.dispatch('adminLogin', {email: this.email, password: this.password}).then((result) => {
 					this.$store.commit('set_loading', false)
 					this.$router.push('/dashboard');
 				}).catch((error) => {
+					console.log(error);
 					this.$store.commit('set_loading', false)
 					this.validationErrors = error.response.data.errors;
 				});

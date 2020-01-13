@@ -328,6 +328,14 @@ select:not(:focus):invalid {
   margin-right: 5px;
 }
 
+.wrap-admin ul.error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  padding: 5px 35px;
+  border-radius: 5px;
+}
+
 .wrap-admin {
   height: 100%;
 }
@@ -395,6 +403,7 @@ select:not(:focus):invalid {
   -webkit-box-align: center;
           align-items: center;
   text-transform: uppercase;
+  border-radius: 10px;
 }
 
 .wrap-admin .login-form .user_card .forget-password {
@@ -402,11 +411,13 @@ select:not(:focus):invalid {
   display: flex;
   height: 100%;
   width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
 }
 
 .wrap-admin .login-form .user_card .forget-password a {
   padding: 15px 25px;
-  color: #f26c61;
   text-decoration: underline;
 }
 
