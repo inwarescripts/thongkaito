@@ -1,23 +1,17 @@
 //WEB
-import HomeLayout from './web/layouts/DefaultLayout';
-import Home from './web/pages/Home';
+import HomeLayout from './layouts/DefaultLayout';
+import Home from './pages/Home';
 
 
 //ADMIN
-import AdminLayout from './admin/layouts/DefaultLayout';
-import AdminLogin from './admin/pages/Login'
-import Dashboard from './admin/pages/Home';
+import AdminLayout from './layouts/DefaultLayout';
+import AdminLogin from './pages/Login'
+import Dashboard from './pages/Home';
 
 //404
 import NotFound from './404'
 
 const routes = [
-    {
-        path: '/', component: HomeLayout,
-        children: [
-            {path: '', name: 'home', component: Home},
-        ]
-    },
     {
         path: '/admin/', component: AdminLayout,
         children: [

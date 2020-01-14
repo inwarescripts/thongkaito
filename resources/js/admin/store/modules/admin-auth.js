@@ -26,7 +26,7 @@ export const mutations = {
 export const actions = {
 	adminLogin({dispatch, commit}, {email, password}) {
 		commit('auth_request')
-		return axios.post('/api/admin/login', {
+		return axios.post('/api-admin/login', {
 			email,
 			password
 		})

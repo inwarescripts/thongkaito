@@ -7,10 +7,9 @@ import VueAxios from 'vue-axios';
 import store from './store'
 import App from './App.vue'
 import routes from './routes';
-import './web/components';
-import './admin/components';
+import './components';
 import VueI18n from 'vue-i18n'
-import messages from './admin/messages';
+import messages from './messages';
 import VCalendar from 'v-calendar';
 import {ValidationObserver, ValidationProvider, extend, localize} from 'vee-validate';
 //Font AwesomeIcon
@@ -26,7 +25,6 @@ Object.keys(rules).forEach(rule => {
 		...rules[rule], // copies rule configuration
 	});
 });
-
 
 Vue.component('ValidationObserver', ValidationObserver);
 Vue.component('ValidationProvider', ValidationProvider);
