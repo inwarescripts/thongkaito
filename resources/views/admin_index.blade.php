@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="locale" content="{{ App::getLocale() }}"/>
 
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/app.css')}}">
 </head>
 <body>
 
