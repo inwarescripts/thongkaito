@@ -1,10 +1,6 @@
-//WEB
-import HomeLayout from './layouts/DefaultLayout';
-import Home from './pages/Home';
 
-
-//ADMIN
-import AdminLayout from './layouts/DefaultLayout';
+import DefaultLayout from './layouts/DefaultLayout';
+import AdminLayout from './layouts/DashboardLayout'
 import AdminLogin from './pages/Login'
 import Dashboard from './pages/Home';
 
@@ -15,8 +11,13 @@ const routes = [
     {
         path: '/admin/', component: AdminLayout,
         children: [
+            {path: 'dashboard', name: 'dashboard', component: Dashboard, meta: {requiresAuth: true}},
+        ]
+    },
+    {
+        path: '/admin/', component: DefaultLayout,
+        children: [
             {path: 'login', name: 'auth.login', component: AdminLogin, meta: {requiresAuth: false}},
-            {path: 'dashboard', name: 'dashboard', component: Dashboard, meta: {requiresAuth: false}},
         ]
     },
     {path: '*', component: NotFound, name: 'not.found'}

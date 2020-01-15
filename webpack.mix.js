@@ -14,5 +14,7 @@ const mix = require('laravel-mix');
 mix.js('resources/js/web/app.js', 'public/js/web')
     .js('resources/js/admin/app.js', 'public/js/admin')
     .copy('resources/images', 'public/images')
+    .copy('resources/font-awesome', 'public/font-awesome')
+    .copy('resources/js/admin/plugins', 'public/js/admin/plugins')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/admin/app.scss', 'public/css/admin');

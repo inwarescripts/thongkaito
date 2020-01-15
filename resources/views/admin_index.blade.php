@@ -12,10 +12,14 @@
     <meta name="locale" content="{{ App::getLocale() }}"/>
 
     <link rel="stylesheet" href="{{asset('css/admin/app.css')}}">
+    <link href="{{asset('font-awesome/css/font-awesome.css')}}" rel="stylesheet">
 </head>
 <body>
 
 <div id="app"></div>
 <script src="{{asset('js/admin/app.js')}}"></script>
+<script src="{{asset('js/admin/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
+<script src="{{asset('js/admin/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
+<script src="{{asset('js/admin/plugins/inspinia.js')}}"></script>
 </body>
 </html>
