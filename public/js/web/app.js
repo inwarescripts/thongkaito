@@ -68871,7 +68871,6 @@ var modules = requireContext.keys().map(function (file) {
   modules[name] = module;
   return modules;
 }, {});
-console.log(modules);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   modules: modules
 }));
@@ -68886,7 +68885,7 @@ console.log(modules);
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./admin-auth.js": "./resources/js/web/store/modules/admin-auth.js",
+	"./auth.js": "./resources/js/web/store/modules/auth.js",
 	"./loading.js": "./resources/js/web/store/modules/loading.js"
 };
 
@@ -68912,10 +68911,10 @@ webpackContext.id = "./resources/js/web/store/modules sync .*\\.js$";
 
 /***/ }),
 
-/***/ "./resources/js/web/store/modules/admin-auth.js":
-/*!******************************************************!*\
-  !*** ./resources/js/web/store/modules/admin-auth.js ***!
-  \******************************************************/
+/***/ "./resources/js/web/store/modules/auth.js":
+/*!************************************************!*\
+  !*** ./resources/js/web/store/modules/auth.js ***!
+  \************************************************/
 /*! exports provided: state, mutations, actions, getters */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

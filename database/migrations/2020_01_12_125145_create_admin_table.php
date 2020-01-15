@@ -15,11 +15,14 @@ class CreateAdminTable extends Migration
     {
         Schema::create('admin', function (Blueprint $table) {
             $table->bigIncrements('id');
-			$table->string('name');
-			$table->string('email')->unique();
-			$table->timestamp('email_verified_at')->nullable();
-			$table->string('password');
-			$table->rememberToken();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->enum('authority', array('superAdmin', 'administrator', 'operator', 'support', 'accounting', 'viewer'));
+            $table->enum('status', array('active', 'suspended', 'deleted'));
+            $table->dateTime('last_logged_at');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -10,12 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::any('/admin/{all}', function () {
+Route::any('/admin/{all?}', function () {
     return view('admin_index');
 })->where(['all' => '.*']);
 
 Route::any('/{all}', function () {
     return view('index');
 })->where(['all' => '.*']);
-
-

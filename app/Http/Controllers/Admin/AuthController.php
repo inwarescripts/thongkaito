@@ -6,6 +6,7 @@ use App\Helpers\HttpCode;
 use App\Helpers\ResponseHelper;
 use App\Helpers\Status;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\AuthRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Validator;
@@ -32,55 +33,24 @@ class AuthController extends Controller
      *
      * @return mixed
      */
-    public function login(Request $request)
+    public function login(AuthRequest $request)
     {
         $errors = [];
         $credentials = $request->only(['email', 'password']);
-        $validator = Validator::make(
-            $credentials,
-            [
-                'email' => 'required',
-                'password' => 'required',
-            ],
-            [
-                'email.required' => __('validation.u1_1_blank_email'),
-                'password.required' => __('validation.u1_1_blank_passwords'),
-            ]
-        );
 
-        if ($validator->fails()) {
-            if ($validator->errors()->has('email')) {
-                $errors['email'] = $validator->errors()->first('email');
-            }
-            if ($validator->errors()->has('password')) {
-                $errors['password'] = $validator->errors()->first('password');
-            }
-        }
-
-        if ($errors) {
-            return ResponseHelper::send([], Status::NG, HttpCode::BAD_REQUEST, $errors);
-        }
-
-        if (! $token = auth()->attempt($credentials)) {
-            $errors['auth'] = __('auth.failed');
-
+        if (!$token = auth('api-admin')->attempt($credentials)) {
+            $errors['auth'] = __('admin/auth.failed');
             return ResponseHelper::send([], Status::NG, HttpCode::UNAUTHORIZED, $errors);
         }
 
-        if (auth()->user()->deleted_at) {
-            $errors['auth'] = __('auth.account_is_deleted');
+        if (auth('api-admin')->user()->status != 'active') {
+            $errors['auth'] = __('admin/auth.account_is_deactivated');
             auth()->logout();
-
             return ResponseHelper::send([], Status::NG, HttpCode::UNAUTHORIZED, $errors);
         }
 
-        if (! auth()->user()->is_active) {
-            $errors['auth'] = __('auth.account_is_deactivated');
-            auth()->logout();
-
-            return ResponseHelper::send([], Status::NG, HttpCode::UNAUTHORIZED, $errors);
-        }
-
+        auth('api-admin')->user()->last_logged_at = Carbon::now();
+        auth('api-admin')->user()->save();
 
         return ResponseHelper::send(['token' => $token], Status::OK, HttpCode::OK, $errors);
     }

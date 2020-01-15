@@ -11,7 +11,7 @@ import './components';
 import VueI18n from 'vue-i18n'
 import messages from './messages';
 import VCalendar from 'v-calendar';
-import {ValidationObserver, ValidationProvider, extend, localize} from 'vee-validate';
+import {extend, ValidationObserver, ValidationProvider} from 'vee-validate';
 //Font AwesomeIcon
 import './awesome'
 import * as rules from 'vee-validate/dist/rules';
@@ -21,9 +21,9 @@ Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 
 Object.keys(rules).forEach(rule => {
-	extend(rule, {
-		...rules[rule], // copies rule configuration
-	});
+    extend(rule, {
+        ...rules[rule], // copies rule configuration
+    });
 });
 
 Vue.component('ValidationObserver', ValidationObserver);
@@ -31,21 +31,52 @@ Vue.component('ValidationProvider', ValidationProvider);
 Vue.config.productionTip = false
 Vue.config.devtools = false
 export const router = new VueRouter({
-	mode: 'history',
-	routes: routes,
-	scrollBehavior(to, from, savedPosition) {
-		return {x: 0, y: 0}
-	}
+    mode: 'history',
+    routes: routes,
+    scrollBehavior(to, from, savedPosition) {
+        return {x: 0, y: 0}
+    }
 });
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        if (store.getters.isLoggedIn) {
+            next()
+            return
+        }
+        next('/login')
+    } else {
+        next()
+    }
+})
+
+//Handle 401 error
+axios.interceptors.response.use(function (response) {
+    return response;
+}, function (error) {
+    if (error.response.status === 401) {
+        store.commit('logout');
+        localStorage.removeItem('admin-token');
+        router.push({name: 'auth.login'});
+    }
+    if (error.response.status === 404) {
+        router.push({name: 'not.found'});
+    }
+    if (error.response.status === 403) {
+        router.push({name: 'dashboard'});
+    }
+    return Promise.reject(error);
+});
+
 Vue.use(VueI18n)
 const i18n = new VueI18n({
-	locale: 'ja',
-	messages,
+    locale: 'ja',
+    messages,
 })
 
 new Vue({
-	router,
-	store,
-	i18n,
-	render: h => h(App),
+    router,
+    store,
+    i18n,
+    render: h => h(App),
 }).$mount('#app')

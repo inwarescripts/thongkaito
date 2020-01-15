@@ -10,8 +10,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 class Account extends Authenticatable implements JWTSubject
 {
     use Notifiable;
-
-
+    protected $primaryKey = 'id';
     protected $guarded = [];
 
     /**
@@ -23,7 +22,7 @@ class Account extends Authenticatable implements JWTSubject
         'password', 'remember_token',
     ];
 
-    protected $table = 'admin_acounts';
+    protected $table = 'admin';
 
     public function setPasswordAttribute($password)
     {

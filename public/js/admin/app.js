@@ -11814,7 +11814,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    console.log('admin');
+    console.log('xx');
+
+    if (this.$store.state.auth.admin_token) {
+      this.$router.push({
+        name: 'dashboard'
+      });
+    }
   }
 });
 
@@ -11933,7 +11939,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }).then(function (result) {
                   _this.$store.commit('set_loading', false);
 
-                  _this.$router.push('/dashboard');
+                  _this.$router.push({
+                    name: 'dashboard'
+                  });
                 })["catch"](function (error) {
                   console.log(error);
 
@@ -53076,7 +53084,7 @@ var render = function() {
           "div",
           {
             staticClass:
-              "d-flex justify-content-center mt-3 mb-4 login_container"
+              "d-flex justify-content-center mt-3 mb-5 login_container"
           },
           [
             _c(
@@ -69435,6 +69443,46 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     };
   }
 });
+router.beforeEach(function (to, from, next) {
+  if (to.matched.some(function (record) {
+    return record.meta.requiresAuth;
+  })) {
+    if (_store__WEBPACK_IMPORTED_MODULE_4__["default"].getters.isLoggedIn) {
+      next();
+      return;
+    }
+
+    next('/login');
+  } else {
+    next();
+  }
+}); //Handle 401 error
+
+axios__WEBPACK_IMPORTED_MODULE_2___default.a.interceptors.response.use(function (response) {
+  return response;
+}, function (error) {
+  if (error.response.status === 401) {
+    _store__WEBPACK_IMPORTED_MODULE_4__["default"].commit('logout');
+    localStorage.removeItem('admin-token');
+    router.push({
+      name: 'auth.login'
+    });
+  }
+
+  if (error.response.status === 404) {
+    router.push({
+      name: 'not.found'
+    });
+  }
+
+  if (error.response.status === 403) {
+    router.push({
+      name: 'dashboard'
+    });
+  }
+
+  return Promise.reject(error);
+});
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_i18n__WEBPACK_IMPORTED_MODULE_8__["default"]);
 var i18n = new vue_i18n__WEBPACK_IMPORTED_MODULE_8__["default"]({
   locale: 'ja',
@@ -69934,14 +69982,14 @@ var routes = [{
   component: _layouts_DefaultLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
   children: [{
     path: 'login',
-    name: 'admin.login',
+    name: 'auth.login',
     component: _pages_Login__WEBPACK_IMPORTED_MODULE_2__["default"],
     meta: {
       requiresAuth: false
     }
   }, {
     path: 'dashboard',
-    name: 'admin.dashboard',
+    name: 'dashboard',
     component: _pages_Home__WEBPACK_IMPORTED_MODULE_1__["default"],
     meta: {
       requiresAuth: false
@@ -69992,7 +70040,6 @@ var modules = requireContext.keys().map(function (file) {
   modules[name] = module;
   return modules;
 }, {});
-console.log(modules);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   modules: modules
 }));
@@ -70007,7 +70054,7 @@ console.log(modules);
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./admin-auth.js": "./resources/js/admin/store/modules/admin-auth.js",
+	"./auth.js": "./resources/js/admin/store/modules/auth.js",
 	"./loading.js": "./resources/js/admin/store/modules/loading.js"
 };
 
@@ -70033,10 +70080,10 @@ webpackContext.id = "./resources/js/admin/store/modules sync .*\\.js$";
 
 /***/ }),
 
-/***/ "./resources/js/admin/store/modules/admin-auth.js":
-/*!********************************************************!*\
-  !*** ./resources/js/admin/store/modules/admin-auth.js ***!
-  \********************************************************/
+/***/ "./resources/js/admin/store/modules/auth.js":
+/*!**************************************************!*\
+  !*** ./resources/js/admin/store/modules/auth.js ***!
+  \**************************************************/
 /*! exports provided: state, mutations, actions, getters */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

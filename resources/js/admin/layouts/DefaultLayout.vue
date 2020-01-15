@@ -5,9 +5,12 @@
 </template>
 
 <script>
-	export default {
-		mounted() {
-			console.log('admin');
-		}
-	}
+    export default {
+        mounted() {
+            console.log('xx');
+            if (this.$store.state.auth.admin_token) {
+                this.$router.push({name: 'dashboard'});
+            }
+        }
+    }
 </script>

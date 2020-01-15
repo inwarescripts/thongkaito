@@ -18,6 +18,9 @@ class AdminTableSeeder extends Seeder
 			'name' => 'Supper admin',
 			'email' => 'demo.test@gmail.com',
 			'password' => bcrypt("123456a@"),
+            'authority' => 'superAdmin',
+            'status' => 'active',
+            'last_logged_at' => Carbon::now(),
 			'created_at' => Carbon::now(),
 			'updated_at' => Carbon::now()
 		]);

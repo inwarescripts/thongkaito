@@ -22,7 +22,7 @@
                     </ul>
                 </template>
             </div>
-            <div class="d-flex justify-content-center mt-3 mb-4 login_container">
+            <div class="d-flex justify-content-center mt-3 mb-5 login_container">
                 <button type="submit" name="button" class="btn login_btn">
                     <font-awesome-icon icon="arrow-right"/>
                     Login
@@ -32,37 +32,37 @@
     </logo>
 </template>
 <script>
-	import logo from '../components/Logo'
+    import logo from '../components/Logo'
 
-	export default {
-		components: {
-			logo
-		},
-		data() {
-			return {
-				email: '',
-				password: '',
-				error: false,
-				validationErrors: {},
-				success: false,
-				remember: false
-			};
-		},
-		created() {
-			document.title = 'Admin Login';
-		},
-		methods: {
-			async login() {
-				this.$store.commit('set_loading', true)
-				this.$store.dispatch('adminLogin', {email: this.email, password: this.password}).then((result) => {
-					this.$store.commit('set_loading', false)
-					this.$router.push('/dashboard');
-				}).catch((error) => {
-					console.log(error);
-					this.$store.commit('set_loading', false)
-					this.validationErrors = error.response.data.errors;
-				});
-			}
-		}
-	}
+    export default {
+        components: {
+            logo
+        },
+        data() {
+            return {
+                email: '',
+                password: '',
+                error: false,
+                validationErrors: {},
+                success: false,
+                remember: false
+            };
+        },
+        created() {
+            document.title = 'Admin Login';
+        },
+        methods: {
+            async login() {
+                this.$store.commit('set_loading', true)
+                this.$store.dispatch('adminLogin', {email: this.email, password: this.password}).then((result) => {
+                    this.$store.commit('set_loading', false)
+                    this.$router.push({name: 'dashboard'});
+                }).catch((error) => {
+                    console.log(error);
+                    this.$store.commit('set_loading', false)
+                    this.validationErrors = error.response.data.errors;
+                });
+            }
+        }
+    }
 </script>
