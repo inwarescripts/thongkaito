@@ -1,9 +1,7 @@
-
 import DefaultLayout from './layouts/DefaultLayout';
-import AdminLayout from './layouts/DashboardLayout'
+import AdminLayout from './layouts/AppLayout'
 import AdminLogin from './pages/Login'
-import Dashboard from './pages/Home';
-
+import Dashboard from './pages/Dashboard';
 //404
 import NotFound from './404'
 

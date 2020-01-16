@@ -6,7 +6,7 @@
                     <div class="dropdown profile-element">
                         <img alt="image" class="rounded-circle" :src="'../images/admin/profile_small.jpg'"/>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="block m-t-xs font-bold">David Williams</span>
+                            <span class="block m-t-xs font-bold">Thong <Kaito></Kaito></span>
                             <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -21,12 +21,10 @@
                         IN+
                     </div>
                 </li>
-                <li class="active">
-                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span>
-                        <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="index.html">Dashboard v.1</a></li>
-                    </ul>
+                <li :class="{'active': $route.name == 'dashboard'}">
+                    <router-link :to="{ name: 'dashboard' }">
+                        <i class="fa fa-th-large"></i> <span class="nav-label">{{$t('dashboard')}}</span>
+                    </router-link>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span
@@ -35,47 +33,6 @@
                         <li><a href="ecommerce_products_grid.html">Products grid</a></li>
                         <li><a href="ecommerce_product_list.html">Products list</a></li>
                     </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span
-                            class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="basic_gallery.html">Lightbox Gallery</a></li>
-                        <li><a href="slick_carousel.html">Slick Carousel</a></li>
-                        <li><a href="carousel.html">Bootstrap Carousel</a></li>
-
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span
-                            class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li>
-                            <a href="#">Third Level <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li><a href="#">Second Level Item</a></li>
-                        <li>
-                            <a href="#">Second Level Item</a></li>
-                        <li>
-                            <a href="#">Second Level Item</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="css_animation.html"><i class="fa fa-magic"></i> <span
-                            class="nav-label">CSS Animations </span><span
-                            class="label label-info float-right">62</span></a>
                 </li>
                 <li class="landing_link">
                     <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span>
@@ -89,3 +46,10 @@
         </div>
     </nav>
 </template>
+<script>
+    export default {
+        created() {
+            console.log(this.$route.name)
+        }
+    }
+</script>

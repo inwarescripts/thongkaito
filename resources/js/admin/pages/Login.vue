@@ -3,18 +3,20 @@
         <form autocomplete="off" @submit.prevent="login" method="post">
             <div class="justify-content-center form_container">
                 <div class="form-group">
-                    <label for="email">Email address</label>
+                    <label for="email">{{$t('auth.email_address')}}</label>
                     <input type="email" v-model="email" placeholder="example@kireilign.com"
                            class="form-control" id="email">
                 </div>
                 <div class="form-group">
-                    <label for="pwd">Password</label><span class="note-tip">Using half-width English more than 8 characters numbers and letters</span>
-                    <input type="password" v-model="password" placeholder="Password" class="form-control" id="pwd">
+                    <label for="pwd">{{$t('auth.password')}}</label>
+                    <span class="note-tip">{{$t('auth.password_note')}}</span>
+                    <input type="password" v-model="password" :placeholder="$t('auth.password')" class="form-control"
+                           id="pwd">
                 </div>
             </div>
             <div class="forget-password">
                 <router-link :to="{ name: 'password.request' }" class="float-right">
-                    Forgot Password?
+                    {{$t('auth.forgot_password')}}
                 </router-link>
                 <template v-if="validationErrors && Object.keys(validationErrors).length">
                     <ul class="justify-content-center error">
@@ -23,9 +25,9 @@
                 </template>
             </div>
             <div class="d-flex justify-content-center mt-3 mb-5 login_container">
-                <button type="submit" name="button" class="btn login_btn">
+                <button type="submit" name="button" class="btn login_btn btn-blue">
                     <font-awesome-icon icon="arrow-right"/>
-                    Login
+                    {{$t('auth.login')}}
                 </button>
             </div>
         </form>
@@ -49,7 +51,7 @@
             };
         },
         created() {
-            document.title = 'Admin Login';
+            document.title = this.$t('page_title.login');
         },
         methods: {
             async login() {
@@ -58,7 +60,6 @@
                     this.$store.commit('set_loading', false)
                     this.$router.push({name: 'dashboard'});
                 }).catch((error) => {
-                    console.log(error);
                     this.$store.commit('set_loading', false)
                     this.validationErrors = error.response.data.errors;
                 });

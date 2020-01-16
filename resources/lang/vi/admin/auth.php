@@ -16,4 +16,5 @@ return [
     'failed' => 'Tài khoản không hợp lệ',
     'throttle' => 'Có quá nhiều yêu cầu. Hãy thử lại lần nữa trong :seconds giây.',
     'account_is_deactivated' => 'Tài khoản đã bị khóa',
+    'server_error' => 'Hệ thống đang bị lỗi, xin chờ trong giây lát.',
 ];

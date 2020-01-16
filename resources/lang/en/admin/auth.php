@@ -15,5 +15,6 @@ return [
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'account_is_deactivated' => 'Account is deactivated'
+    'account_is_deactivated' => 'Account is deactivated',
+    'server_error' => 'Server error, please waiting for minute',
 ];

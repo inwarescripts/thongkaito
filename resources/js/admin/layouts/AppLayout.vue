@@ -4,11 +4,9 @@
         <div id="page-wrapper" class="gray-bg">
             <Header></Header>
             <!-- Content Wrapper -->
+            <BreadCrumb></BreadCrumb>
             <div class="wrapper wrapper-content">
-                <BreadCrumb></BreadCrumb>
-                <div class="content-body">
-                    <router-view></router-view>
-                </div>
+                <router-view></router-view>
             </div>
             <!-- Main Footer -->
             <Footer></Footer>

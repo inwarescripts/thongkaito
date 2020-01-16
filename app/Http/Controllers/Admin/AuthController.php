@@ -35,24 +35,28 @@ class AuthController extends Controller
      */
     public function login(AuthRequest $request)
     {
-        $errors = [];
-        $credentials = $request->only(['email', 'password']);
+        try {
+            $errors = [];
+            $credentials = $request->only(['email', 'password']);
 
-        if (!$token = auth('api-admin')->attempt($credentials)) {
-            $errors['auth'] = __('admin/auth.failed');
-            return ResponseHelper::send([], Status::NG, HttpCode::UNAUTHORIZED, $errors);
+            if (!$token = auth('api-admin')->attempt($credentials)) {
+                $errors['auth'] = __('admin/auth.failed');
+                return ResponseHelper::send([], Status::NG, HttpCode::UNAUTHORIZED, $errors);
+            }
+
+            if (auth('api-admin')->user()->status != 'active') {
+                $errors['auth'] = __('admin/auth.account_is_deactivated');
+                auth()->logout();
+                return ResponseHelper::send([], Status::NG, HttpCode::UNAUTHORIZED, $errors);
+            }
+
+            auth('api-admin')->user()->last_logged_at = Carbon::now();
+            auth('api-admin')->user()->save();
+
+            return ResponseHelper::send(['token' => $token], Status::OK, HttpCode::OK, $errors);
+        } catch (\Exception $e) {
+            return ResponseHelper::send([], Status::NG, HttpCode::UNAUTHORIZED, [__('admin/auth.server_error')]);
         }
-
-        if (auth('api-admin')->user()->status != 'active') {
-            $errors['auth'] = __('admin/auth.account_is_deactivated');
-            auth()->logout();
-            return ResponseHelper::send([], Status::NG, HttpCode::UNAUTHORIZED, $errors);
-        }
-
-        auth('api-admin')->user()->last_logged_at = Carbon::now();
-        auth('api-admin')->user()->save();
-
-        return ResponseHelper::send(['token' => $token], Status::OK, HttpCode::OK, $errors);
     }
 
     /**
