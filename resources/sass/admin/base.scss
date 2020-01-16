@@ -141,17 +141,33 @@ textarea {
 	}
 }
 
-.btn-blue {
-	width: 100%;
+.btn-red {
 	background: $blue-color !important;
 	color: #FFFFFF !important;
 	height: 50px;
 	font-family: 'Noto Sans Bold';
-	font-size: 15px;
+	font-size: 15px !important;
 	border: 2px solid !important;
+	text-transform: uppercase;
 	&:hover {
 		background: #FFFFFF !important;
 		color: $blue-color !important;
+	}
+	svg {
+		margin-right: 5px;
+	}
+}
+.btn-blue{
+	background: #1ab394 !important;
+	color: #FFFFFF !important;
+	height: 50px;
+	font-family: 'Noto Sans Bold';
+	font-size: 15px !important;
+	border: 2px solid !important;
+	text-transform: uppercase;
+	&:hover {
+		background: #FFFFFF !important;
+		color: #1ab394 !important;
 	}
 	svg {
 		margin-right: 5px;

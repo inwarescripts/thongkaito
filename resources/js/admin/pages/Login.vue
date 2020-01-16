@@ -25,7 +25,7 @@
                 </template>
             </div>
             <div class="d-flex justify-content-center mt-3 mb-5 login_container">
-                <button type="submit" name="button" class="btn login_btn btn-blue">
+                <button type="submit" name="button" class="btn login_btn btn-red">
                     <font-awesome-icon icon="arrow-right"/>
                     {{$t('auth.login')}}
                 </button>

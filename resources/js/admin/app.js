@@ -15,6 +15,8 @@ import {extend, ValidationObserver, ValidationProvider} from 'vee-validate';
 //Font AwesomeIcon
 import './awesome'
 import * as rules from 'vee-validate/dist/rules';
+import PortalVue from 'portal-vue'
+Vue.use(PortalVue)
 
 Vue.use(VCalendar, {});
 Vue.use(VueRouter);
