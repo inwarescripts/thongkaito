@@ -29,6 +29,7 @@
         "popper.js": "^1.16.0",
         "portal-vue": "^2.1.7",
         "v-calendar": "^1.0.0-beta.23",
+        "v-tooltip": "^2.0.2",
         "vee-validate": "^3.2.1",
         "vue": "^2.6.11",
         "vue-axios": "^2.1.5",

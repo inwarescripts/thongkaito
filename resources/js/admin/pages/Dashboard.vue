@@ -300,7 +300,8 @@
     .cpanel div.icon i {
         padding: 10px 0;
         margin: 0 auto;
-        font-size: 30px;
+        font-size: 35px;
+        color: #1ab394;
     }
 
     .cpanel div.icon a, #cpanel div.icon a {
@@ -331,10 +332,14 @@
     .cpanel div.icon a:hover {
         background-color: #1ab394;
         color: #FFFFFF;
-
+        border-top:5px solid #f26c61;
     }
+    .cpanel div.icon a:hover i{
+       color:#FFFFFF;
+    }
+
     .cpanel div.icon a:hover i {
-        font-size:35px;
+        font-size: 35px;
     }
 
     #cpanel div.icon a:hover,

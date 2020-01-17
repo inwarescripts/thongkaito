@@ -16,6 +16,10 @@ import {extend, ValidationObserver, ValidationProvider} from 'vee-validate';
 import './awesome'
 import * as rules from 'vee-validate/dist/rules';
 import PortalVue from 'portal-vue'
+
+import VTooltip from 'v-tooltip'
+Vue.use(VTooltip)
+
 Vue.use(PortalVue)
 
 Vue.use(VCalendar, {});

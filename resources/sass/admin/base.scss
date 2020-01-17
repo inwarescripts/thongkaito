@@ -157,7 +157,8 @@ textarea {
 		margin-right: 5px;
 	}
 }
-.btn-blue{
+
+.btn-blue {
 	background: #1ab394 !important;
 	color: #FFFFFF !important;
 	height: 50px;
@@ -181,6 +182,42 @@ ul {
 		border-color: #ebccd1;
 		padding: 5px 35px;
 		border-radius: 5px;
+	}
+}
+
+.table-list {
+	.btn {
+		margin: 0px 5px;
+		padding: 0px;
+		i {
+			font-size: 20px;
+			color: #8b8f92;
+			&:hover {
+				color: $blue-color;
+			}
+		}
+	}
+}
+
+.div-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+ul.pagination {
+	li {
+		&.active {
+			a {
+				background: $blue-color;
+				color: #ffffff;
+			}
+		}
+		&.disabled{
+			a{
+				background: #dee2e6;
+			}
+		}
 	}
 }
 

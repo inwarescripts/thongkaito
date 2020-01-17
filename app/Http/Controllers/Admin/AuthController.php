@@ -7,9 +7,7 @@ use App\Helpers\ResponseHelper;
 use App\Helpers\Status;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\AuthRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {

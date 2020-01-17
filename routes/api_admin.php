@@ -18,7 +18,9 @@ use Illuminate\Http\Request;
 Route::post('/login', 'AuthController@login')->name('api.login');
 Route::get('/logout', 'AuthController@logout')->name('api.logout');
 
-//
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
+
+Route::group(['middleware' => 'auth.jwt'], function () {
+    Route::group(['prefix' => 'users'], function () {
+        Route::get('/', 'UserController@listUser')->name('user.list');
+    });
+});

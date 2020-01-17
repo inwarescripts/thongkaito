@@ -4,6 +4,7 @@ import AdminLogin from './pages/Login'
 import Dashboard from './pages/Dashboard';
 //User
 import UserList from './pages/user/List'
+import UserAdd from './pages/user/Add'
 //404
 import NotFound from './404'
 
@@ -13,6 +14,7 @@ const routes = [
         children: [
             {path: 'dashboard', name: 'dashboard', component: Dashboard, meta: {requiresAuth: true}},
             {path: 'users', name: 'users', component: UserList, meta: {requiresAuth: true}},
+            {path: 'users/add', name: 'user.add', component: UserAdd, meta: {requiresAuth: true}},
         ]
     },
     {

@@ -29,7 +29,11 @@
                     <a href="#"><i class="fa fa-users" aria-hidden="true"></i> <span class="nav-label">User</span><span
                             class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="ecommerce_products_grid.html">User list</a></li>
+                        <li>
+                            <router-link :to="{ name: 'users' }">
+                                User list
+                            </router-link>
+                        </li>
                         <li><a href="ecommerce_product_list.html">Add user</a></li>
                     </ul>
                 </li>

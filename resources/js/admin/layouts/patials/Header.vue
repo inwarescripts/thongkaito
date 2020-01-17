@@ -4,7 +4,7 @@
             <div class="navbar-header">
                 <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
                         class="fa fa-bars"></i> </a>
-                    <h2>{{$t($route.name).toUpperCase() }}</h2>
+                <h2>{{$t($route.name).toUpperCase() }}</h2>
             </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
@@ -135,8 +135,16 @@
     }
 </script>
 <style>
-    .navbar-header{
+    .navbar-header {
         display: flex;
         align-items: center;
+    }
+
+    .navbar-header a {
+        margin: 0px 5px 0 20px;
+    }
+
+    .navbar-header h2 {
+        margin: 0;
     }
 </style>
