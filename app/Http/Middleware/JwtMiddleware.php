@@ -43,7 +43,7 @@ class JwtMiddleware
                 return ResponseHelper::send(
                     [],
                     Status::NG,
-                    HttpCode::FORBIDDEN
+                    HttpCode::UNAUTHORIZED
                 );
             }
 
@@ -53,7 +53,7 @@ class JwtMiddleware
                 return ResponseHelper::send(
                     [],
                     Status::NG,
-                    HttpCode::FORBIDDEN,
+                    HttpCode::UNAUTHORIZED,
                     ['jwt_token_invalid' => 'jwt_token_invalid_message']
                 );
 
@@ -74,7 +74,7 @@ class JwtMiddleware
                     return ResponseHelper::send(
                         [],
                         Status::NG,
-                        HttpCode::FORBIDDEN,
+                        HttpCode::UNAUTHORIZED,
                         ['jwt_token_expired' => 'jwt_token_expired_message']
                     );
                 }
@@ -83,7 +83,7 @@ class JwtMiddleware
                 return ResponseHelper::send(
                     [],
                     Status::NG,
-                    HttpCode::FORBIDDEN,
+                    HttpCode::UNAUTHORIZED,
                     ['jwt_mdlw_error' => $e->getMessage()]
                 );
             }

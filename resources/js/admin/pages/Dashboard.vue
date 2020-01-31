@@ -1,122 +1,150 @@
 <template>
     <div class="adminform">
         <div class="row">
-            <div class="cpanel-left col-md-12 col-lg-7">
+            <div class="cpanel-left col-md-12 col-lg-12">
                 <div class="cpanel">
-                    <div class="icon-wrapper">
-                        <div class="icon">
-                            <router-link :to="{ name: 'users' }">
-                                <i class="fa fa-users" aria-hidden="true"></i>
-                                <span>User</span>
-                            </router-link>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper">
+                            <div class="icon">
+                                <router-link :to="{ name: 'users' }">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                    <span>User</span>
+                                </router-link>
+                            </div>
                         </div>
                     </div>
-                    <div class="icon-wrapper">
-                        <div class="icon">
-                            <a href="">
-                                <i class="fa fa-user-plus" aria-hidden="true"></i>
-                                <span>Add user</span>
-                            </a>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper">
+                            <div class="icon">
+                                <a href="">
+                                    <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                    <span>Add user</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="icon-wrapper">
-                        <div class="icon">
-                            <a href="">
-                                <i class="fa fa-building" aria-hidden="true"></i>
-                                <span>Category Manager</span>
-                            </a></div>
-                    </div>
-                    <div class="icon-wrapper">
-                        <div class="icon">
-                            <a href="">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                <span>Media Manager</span>
-                            </a>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper">
+                            <div class="icon">
+                                <a href="">
+                                    <i class="fa fa-building" aria-hidden="true"></i>
+                                    <span>Category Manager</span>
+                                </a></div>
                         </div>
                     </div>
-                    <div class="icon-wrapper">
-                        <div class="icon">
-                            <a href="">
-                                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-                                <span>Menu Manager</span>
-                            </a>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper">
+                            <div class="icon">
+                                <a href="">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    <span>Media Manager</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="icon-wrapper">
-                        <div class="icon">
-                            <a href="">
-                                <i class="fa fa-pencil-square" aria-hidden="true"></i>
-                                <span>User Manager</span>
-                            </a>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper">
+                            <div class="icon">
+                                <a href="">
+                                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                    <span>Menu Manager</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="icon-wrapper">
-                        <div class="icon">
-                            <a href="">
-                                <i class="fa fa-truck" aria-hidden="true"></i>
-                                <span>Module Manager</span>
-                            </a>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper">
+                            <div class="icon">
+                                <a href="">
+                                    <i class="fa fa-pencil-square" aria-hidden="true"></i>
+                                    <span>User Manager</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="icon-wrapper">
-                        <div class="icon">
-                            <a href="">
-                                <i class="fa fa-picture-o" aria-hidden="true"></i>
-                                <span>Extension Manager</span>
-                            </a>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper">
+                            <div class="icon">
+                                <a href="">
+                                    <i class="fa fa-truck" aria-hidden="true"></i>
+                                    <span>Module Manager</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="icon-wrapper">
-                        <div class="icon">
-                            <a href="">
-                                <i class="fa fa-pie-chart" aria-hidden="true"></i>
-                                <span>Language Manager</span>
-                            </a>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper">
+                            <div class="icon">
+                                <a href="">
+                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                    <span>Extension Manager</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="icon-wrapper">
-                        <div class="icon">
-                            <a href="">
-                                <i class="fa fa-sitemap" aria-hidden="true"></i>
-                                <span>Global Configuration</span>
-                            </a>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper">
+                            <div class="icon">
+                                <a href="">
+                                    <i class="fa fa-pie-chart" aria-hidden="true"></i>
+                                    <span>Language Manager</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="icon-wrapper">
-                        <div class="icon">
-                            <a href="">
-                                <i class="fa fa-tags" aria-hidden="true"></i>
-                                <span>Template Manager</span>
-                            </a>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper">
+                            <div class="icon">
+                                <a href="">
+                                    <i class="fa fa-sitemap" aria-hidden="true"></i>
+                                    <span>Global Configuration</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="icon-wrapper">
-                        <div class="icon">
-                            <a href="">
-                                <i class="fa fa-file-text" aria-hidden="true"></i>
-                                <span>Edit Profile</span>
-                            </a>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper">
+                            <div class="icon">
+                                <a href="">
+                                    <i class="fa fa-tags" aria-hidden="true"></i>
+                                    <span>Template Manager</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="icon-wrapper" id="plg_quickicon_joomlaupdate">
-                        <div class="icon">
-                            <a href="">
-                                <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                <span>Joomla! is up-to-date</span>
-                            </a>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper">
+                            <div class="icon">
+                                <a href="">
+                                    <i class="fa fa-file-text" aria-hidden="true"></i>
+                                    <span>Edit Profile</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="icon-wrapper" id="plg_quickicon_extensionupdate">
-                        <div class="icon">
-                            <a href="">
-                                <i class="fa fa-language" aria-hidden="true"></i>
-                                <span>Language setting</span>
-                            </a>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper" id="plg_quickicon_joomlaupdate">
+                            <div class="icon">
+                                <a href="">
+                                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                    <span>Joomla! is up-to-date</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
+                        <div class="icon-wrapper" id="plg_quickicon_extensionupdate">
+                            <div class="icon">
+                                <a href="">
+                                    <i class="fa fa-language" aria-hidden="true"></i>
+                                    <span>Language setting</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="cpanel-right col-md-12 col-lg-5">
+            <div class="cpanel-right col-md-12 col-lg-12">
                 <div id="panel-sliders" class="pane-sliders">
                     <div class="panel">
                         <div class="ibox">
@@ -277,12 +305,22 @@
 </script>
 <style>
     /* -- CONTROL PANEL STYLES ----------------------------- */
+
+    .adminform .cpanel {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .icon-wrapper {
+        display: flex;
+    }
+
     .cpanel div.icon, #cpanel div.icon {
         text-align: center;
         margin-right: 15px;
-        float: left;
         margin-bottom: 15px;
-
+        display: flex;
+        width: 100%;
     }
 
     .cpanel div.icon i {
@@ -298,7 +336,7 @@
         display: block;
         float: left;
         height: 97px;
-        width: 200px;
+        width: 100%;
         color: #565656;
         vertical-align: middle;
         text-decoration: none;
