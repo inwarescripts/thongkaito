@@ -144,8 +144,8 @@
                     </div>
                 </div>
             </div>
-            <div class="cpanel-right col-md-12 col-lg-12">
-                <div id="panel-sliders" class="pane-sliders">
+            <div class="cpanel-right col-md-12 col-lg-6">
+                <div class="pane-sliders">
                     <div class="panel">
                         <div class="ibox">
                             <IboxHeader>
@@ -212,6 +212,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="cpanel-right col-md-12 col-lg-6">
+                <div class="pane-sliders">
                     <div class="panel">
                         <div class="ibox ">
                             <IboxHeader>
