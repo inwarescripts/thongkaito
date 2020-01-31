@@ -119,18 +119,12 @@
             <div class="cpanel-right col-md-12 col-lg-5">
                 <div id="panel-sliders" class="pane-sliders">
                     <div class="panel">
-                        <div class="ibox ">
-                            <div class="ibox-title">
-                                <h5>Last 5 Logged-in Users</h5>
-                                <div class="ibox-tools">
-                                    <a class="collapse-link">
-                                        <i class="fa fa-chevron-up"></i>
-                                    </a>
-                                    <a class="close-link">
-                                        <i class="fa fa-times"></i>
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="ibox">
+                            <IboxHeader>
+                                <template v-slot:iboxTitle>
+                                    Last 5 Logged-in Users
+                                </template>
+                            </IboxHeader>
                             <div class="ibox-content">
                                 <div class="row">
                                     <table class="table table-hover margin bottom">
@@ -192,17 +186,11 @@
                     </div>
                     <div class="panel">
                         <div class="ibox ">
-                            <div class="ibox-title">
-                                <h5>Last 5 Added Articles</h5>
-                                <div class="ibox-tools">
-                                    <a class="collapse-link">
-                                        <i class="fa fa-chevron-up"></i>
-                                    </a>
-                                    <a class="close-link">
-                                        <i class="fa fa-times"></i>
-                                    </a>
-                                </div>
-                            </div>
+                            <IboxHeader>
+                                <template v-slot:iboxTitle>
+                                    Last 5 Added Articles
+                                </template>
+                            </IboxHeader>
                             <div class="ibox-content">
                                 <div class="row">
                                     <table class="table table-hover margin bottom">
@@ -332,10 +320,11 @@
     .cpanel div.icon a:hover {
         background-color: #1ab394;
         color: #FFFFFF;
-        border-top:5px solid #f26c61;
+        border-top: 5px solid #f26c61;
     }
-    .cpanel div.icon a:hover i{
-       color:#FFFFFF;
+
+    .cpanel div.icon a:hover i {
+        color: #FFFFFF;
     }
 
     .cpanel div.icon a:hover i {

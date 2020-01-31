@@ -38,8 +38,11 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span
-                            class="fa arrow"></span></a>
+                    <a href="#">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="nav-label">E-commerce</span>
+                        <span class="fa arrow"></span>
+                    </a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="ecommerce_products_grid.html">Products grid</a></li>
                         <li><a href="ecommerce_product_list.html">Products list</a></li>
@@ -53,7 +56,6 @@
                     <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
                 </li>
             </ul>
-
         </div>
     </nav>
 </template>

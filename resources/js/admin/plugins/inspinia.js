@@ -26,28 +26,6 @@ $(document).ready(function () {
         fix_height();
     });
 
-    // Collapse ibox function
-    $('.collapse-link').on('click', function (e) {
-        e.preventDefault();
-        var ibox = $(this).closest('div.ibox');
-        var button = $(this).find('i');
-        var content = ibox.children('.ibox-content');
-        content.slideToggle(200);
-        button.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
-        ibox.toggleClass('').toggleClass('border-bottom');
-        setTimeout(function () {
-            ibox.resize();
-            ibox.find('[id^=map-]').resize();
-        }, 50);
-    });
-
-    // Close ibox function
-    $('.close-link').on('click', function (e) {
-        e.preventDefault();
-        var content = $(this).closest('div.ibox');
-        content.remove();
-    });
-
     // Fullscreen ibox function
     $('.fullscreen-link').on('click', function (e) {
         e.preventDefault();
@@ -108,13 +86,6 @@ $(document).ready(function () {
         label.toggleClass('todo-completed');
         return false;
     });
-
-    // Append config box / Only for demo purpose
-    // Uncomment on server mode to enable XHR calls
-    //$.get("skin-config.html", function (data) {
-    //    if (!$('body').hasClass('no-skin-config'))
-    //        $('body').append(data);
-    //});
 
     // Minimalize menu
     $('.navbar-minimalize').on('click', function (event) {

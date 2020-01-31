@@ -31,7 +31,7 @@
             RightSlideBar
         },
         mounted() {
-            if (this.$route.path == '/admin/') {
+            if (this.$route.path == '/admin' || this.$route.path == '/admin/') {
                 this.$router.push({name: 'dashboard'});
             }
         }

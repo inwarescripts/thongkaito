@@ -50,7 +50,7 @@ router.beforeEach((to, from, next) => {
             next()
             return
         }
-        next('admin/login')
+        next('/admin/login')
     } else {
         next()
     }
