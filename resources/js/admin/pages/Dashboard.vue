@@ -321,7 +321,6 @@
 
     .cpanel div.icon, #cpanel div.icon {
         text-align: center;
-        margin-right: 15px;
         margin-bottom: 15px;
         display: flex;
         width: 100%;

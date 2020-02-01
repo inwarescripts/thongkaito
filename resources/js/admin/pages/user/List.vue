@@ -1,13 +1,5 @@
 <template>
     <div>
-        <portal to="destination">
-            <router-link :to="{ name: 'user.add' }">
-                <button class="btn btn-blue">
-                    <i class="fa fa-plus-square" aria-hidden="true"></i> Add new user
-                </button>
-            </router-link>
-            <button class="btn btn-red" @click="edit"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
-        </portal>
         <div class="row">
             <div class="col-lg-12">
                 <div class="ibox ">
@@ -19,6 +11,12 @@
                                 <option value="50">50</option>
                                 <option value="100">100</option>
                             </select> entries</label>
+							<router-link :to="{ name: 'user.add' }">
+								<button class="btn btn-blue">
+									<i class="fa fa-plus-square" aria-hidden="true"></i>
+								</button>
+							</router-link>
+							<button class="btn btn-red" @click="edit"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         </template>
                     </IboxHeader>
                     <div class="ibox-content">

@@ -1,34 +1,16 @@
 <template>
     <div>
-        <portal to="destination">
-
-            <button class="btn btn-blue">
-                <i class="fa fa-plus-square" aria-hidden="true"></i> Register
-            </button>
-            <button class="btn btn-red" @click="edit"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
-        </portal>
         <div class="row">
             <div class="col-lg-12">
                 <div class="ibox ">
-                    <div class="ibox-title">
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#" class="dropdown-item">Config option 1</a>
-                                </li>
-                                <li><a href="#" class="dropdown-item">Config option 2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
+                    <IboxHeader>
+                        <template v-slot:iboxAction>
+                            <button class="btn btn-blue">
+								<i class="fa fa-plus-square" aria-hidden="true"></i> 
+							</button>
+							<button class="btn btn-red" @click="edit"><i class="fa fa-trash" aria-hidden="true"></i> </button>
+                        </template>
+                    </IboxHeader>
                     <div class="ibox-content">
                         <form autocomplete="off" class="form" role="form">
                             <nav>

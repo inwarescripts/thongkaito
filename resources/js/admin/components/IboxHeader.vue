@@ -31,3 +31,12 @@
         }
     }
 </script>
+<style>
+	.ibox-title{
+	    background-repeat: repeat-x;
+		border-bottom: 1px solid #d4d4d4;
+		-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+		background-image: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%);
+	}
+</style>
