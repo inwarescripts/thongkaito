@@ -5,12 +5,6 @@
                 <div class="ibox ">
                     <IboxHeader>
                         <template v-slot:iboxAction>
-                            <label>Show <select name="numb" class="form-control ">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select> entries</label>
 							<router-link :to="{ name: 'user.add' }">
 								<button class="btn btn-blue">
 									<i class="fa fa-plus-square" aria-hidden="true"></i>
@@ -18,6 +12,14 @@
 							</router-link>
 							<button class="btn btn-red" @click="edit"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         </template>
+						<template v-slot:iboxFilter>
+						<label>Show <select name="numb" class="form-control ">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select> entries</label>
+						</template>
                     </IboxHeader>
                     <div class="ibox-content">
                         <div class="table-responsive">
