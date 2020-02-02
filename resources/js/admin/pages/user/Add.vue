@@ -31,9 +31,11 @@
                                      aria-labelledby="nav-home-tab">
                                     <div class="row">
                                         <div class="col-md-3 col-xl-2">
-                                            <img :src="'../../images/admin/a4.jpg'"/>
+											<fieldset class="image">
+												<img :src="'../../images/admin/a4.jpg'"/>
+											</fieldset>
                                         </div>
-                                        <div class="col-md-5 col-xl-6">
+                                        <div class="col-md-9 col-xl-10">
                                             <div class="form-group">
                                                 <label for="inputName">Name</label>
                                                 <input class="form-control" id="inputName"
@@ -72,7 +74,7 @@
                                 <div class="tab-pane fade" id="nav-profile" role="tabpanel"
                                      aria-labelledby="nav-profile-tab">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="inputEmail3">Image</label>
                                                 <div class="custom-file">

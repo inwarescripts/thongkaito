@@ -139,11 +139,18 @@ textarea {
 .form-group {
 	font-size: 14px;
 	font-family: $font-roboto-medium;
+	border-bottom: 1px dotted #ccc;
+    min-height: 35px;
+    padding: 0px;
+    margin: 5px!important;
+    display: flex;
 	label {
 		color: $main-text-color;
 		margin-bottom: 3px;
 		font-size: 14px;
 		font-weight: 500;
+		font-weight: bold;
+		min-width: 135px;
 	}
 }
 
@@ -225,6 +232,10 @@ ul.pagination {
 			}
 		}
 	}
+}
+
+.tab-content{
+	padding: 5px 17px 17px 17px;
 }
 
 //LOADING

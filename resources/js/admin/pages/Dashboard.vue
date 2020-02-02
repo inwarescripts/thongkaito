@@ -1,7 +1,7 @@
 <template>
     <div class="adminform">
         <div class="row">
-            <div class="cpanel-left col-md-12 col-lg-12">
+            <div class="cpanel-left">
                 <div class="cpanel">
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
                         <div class="icon-wrapper">
@@ -144,6 +144,8 @@
                     </div>
                 </div>
             </div>
+		</div>
+		<div class="row">
             <div class="cpanel-right col-md-12 col-lg-6">
                 <div class="pane-sliders">
                     <div class="panel">
