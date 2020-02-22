@@ -6,11 +6,9 @@
  */
 
 $(document).ready(function () {
-
     // Fast fix bor position issue with Propper.js
     // Will be fixed in Bootstrap 4.1 - https://github.com/twbs/bootstrap/pull/24092
     Popper.Defaults.modifiers.computeStyle.gpuAcceleration = false;
-
 
     // Add body-small class if window less than 768px
     if ($(window).width() < 769) {
@@ -26,38 +24,6 @@ $(document).ready(function () {
         fix_height();
     });
 
-    // Fullscreen ibox function
-    $('.fullscreen-link').on('click', function (e) {
-        e.preventDefault();
-        var ibox = $(this).closest('div.ibox');
-        var button = $(this).find('i');
-        $('body').toggleClass('fullscreen-ibox-mode');
-        button.toggleClass('fa-expand').toggleClass('fa-compress');
-        ibox.toggleClass('fullscreen');
-        setTimeout(function () {
-            $(window).trigger('resize');
-        }, 100);
-    });
-
-    // Close menu in canvas mode
-    $('.close-canvas-menu').on('click', function (e) {
-        e.preventDefault();
-        $("body").toggleClass("mini-navbar");
-        SmoothlyMenu();
-    });
-
-    // Run menu of canvas
-    $('body.canvas-menu .sidebar-collapse').slimScroll({
-        height: '100%',
-        railOpacity: 0.9
-    });
-
-    // Open close right sidebar
-    $('.right-sidebar-toggle').on('click', function (e) {
-        e.preventDefault();
-        $('#right-sidebar').toggleClass('sidebar-open');
-    });
-
     // Initialize slimscroll for right sidebar
     $('.sidebar-container').slimScroll({
         height: '100%',
@@ -65,42 +31,7 @@ $(document).ready(function () {
         wheelStep: 10
     });
 
-    // Open close small chat
-    $('.open-small-chat').on('click', function (e) {
-        e.preventDefault();
-        $(this).children().toggleClass('fa-comments').toggleClass('fa-times');
-        $('.small-chat-box').toggleClass('active');
-    });
-
-    // Initialize slimscroll for small chat
-    $('.small-chat-box .content').slimScroll({
-        height: '234px',
-        railOpacity: 0.4
-    });
-
-    // Small todo handler
-    $('.check-link').on('click', function () {
-        var button = $(this).find('i');
-        var label = $(this).next('span');
-        button.toggleClass('fa-check-square').toggleClass('fa-square-o');
-        label.toggleClass('todo-completed');
-        return false;
-    });
-
     // Minimalize menu
-    $('.navbar-minimalize').on('click', function (event) {
-        event.preventDefault();
-        $("body").toggleClass("mini-navbar");
-        SmoothlyMenu();
-
-    });
-
-    // Tooltips demo
-    $('.tooltip-demo').tooltip({
-        selector: "[data-toggle=tooltip]",
-        container: "body"
-    });
-
 
     // Move right sidebar top after scroll
     $(window).scroll(function () {
@@ -246,26 +177,7 @@ function animationHover(element, animation) {
         });
 }
 
-function SmoothlyMenu() {
-    if (!$('body').hasClass('mini-navbar') || $('body').hasClass('body-small')) {
-        // Hide menu in order to smoothly turn on when maximize menu
-        $('#side-menu').hide();
-        // For smoothly turn on menu
-        setTimeout(
-            function () {
-                $('#side-menu').fadeIn(400);
-            }, 200);
-    } else if ($('body').hasClass('fixed-sidebar')) {
-        $('#side-menu').hide();
-        setTimeout(
-            function () {
-                $('#side-menu').fadeIn(400);
-            }, 100);
-    } else {
-        // Remove all inline style from jquery fadeIn function to reset menu state
-        $('#side-menu').removeAttr('style');
-    }
-}
+
 
 // Dragable panels
 function WinMove() {

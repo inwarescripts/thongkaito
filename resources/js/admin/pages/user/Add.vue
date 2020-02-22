@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="wrap-user">
         <div class="row">
             <div class="col-lg-12">
                 <div class="ibox ">
@@ -30,12 +30,12 @@
                                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
                                      aria-labelledby="nav-home-tab">
                                     <div class="row">
-                                        <div class="col-md-3 col-xl-2">
-											<fieldset class="image">
+                                        <div class="col-md-4 col-xl-3">
+											<fieldset class="user-avatar">
 												<img :src="'../../images/admin/a4.jpg'"/>
 											</fieldset>
                                         </div>
-                                        <div class="col-md-9 col-xl-10">
+                                        <div class="col-md-8 col-xl-9">
                                             <div class="form-group">
                                                 <label for="inputName">Name</label>
                                                 <input class="form-control" id="inputName"
@@ -50,17 +50,19 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputPassword3">Password</label>
-                                                <input class="form-control" id="inputPassword3"
-                                                       placeholder="Password"
-                                                       required="" type="password">
-                                                <small class="form-text text-muted" id="passwordHelpBlock">Your
-                                                    password
-                                                    must be
-                                                    8-20 characters long, contain letters and numbers, and must
-                                                    not
-                                                    contain
-                                                    spaces, special characters, or emoji.
-                                                </small>
+												<div class="input-group">
+													<input class="form-control" id="inputPassword3"
+														   placeholder="Password"
+														   required="" type="password">
+													<small class="form-text text-muted" id="passwordHelpBlock">Your
+														password
+														must be
+														8-20 characters long, contain letters and numbers, and must
+														not
+														contain
+														spaces, special characters, or emoji.
+													</small>
+												</div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputVerify3">Verify</label>

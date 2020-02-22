@@ -9,9 +9,11 @@
                 </div>
                 <div class="form-group">
                     <label for="pwd">{{$t('auth.password')}}</label>
-                    <span class="note-tip">{{$t('auth.password_note')}}</span>
-                    <input type="password" v-model="password" :placeholder="$t('auth.password')" class="form-control"
+					<div class="input-group">
+						<span class="note-tip">{{$t('auth.password_note')}}</span>
+						<input type="password" v-model="password" :placeholder="$t('auth.password')" class="form-control"
                            id="pwd">
+					</div>
                 </div>
             </div>
             <div class="forget-password">

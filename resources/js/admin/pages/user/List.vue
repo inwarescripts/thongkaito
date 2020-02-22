@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="wrap-user">
         <div class="row">
             <div class="col-lg-12">
                 <div class="ibox ">

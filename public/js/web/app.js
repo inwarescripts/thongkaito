@@ -69022,6 +69022,17 @@ var mutations = {
 
 /***/ }),
 
+/***/ "./resources/sass/admin/app.scss":
+/*!***************************************!*\
+  !*** ./resources/sass/admin/app.scss ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -69034,14 +69045,15 @@ var mutations = {
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************************!*\
-  !*** multi ./resources/js/web/app.js ./resources/sass/app.scss ***!
-  \*****************************************************************/
+/*!*************************************************************************************************!*\
+  !*** multi ./resources/js/web/app.js ./resources/sass/app.scss ./resources/sass/admin/app.scss ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\thongkaito\resources\js\web\app.js */"./resources/js/web/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\thongkaito\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\PHP7\htdocs\smarttoys\resources\js\web\app.js */"./resources/js/web/app.js");
+__webpack_require__(/*! E:\PHP7\htdocs\smarttoys\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! E:\PHP7\htdocs\smarttoys\resources\sass\admin\app.scss */"./resources/sass/admin/app.scss");
 
 
 /***/ })

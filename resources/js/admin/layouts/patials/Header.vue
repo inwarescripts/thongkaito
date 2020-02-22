@@ -2,7 +2,7 @@
     <div class="row border-bottom">
         <nav class="navbar navbar-static-top gray-bg" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
+                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " @click="showHideSlide" href="#"><i
                         class="fa fa-bars"></i> </a>
                 <h2>{{$t($route.name).toUpperCase() }}</h2>
             </div>
@@ -113,7 +113,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="right-sidebar-toggle">
+                    <a class="right-sidebar-toggle" @click="showHideRightSlide">
                         <i class="fa fa-tasks"></i>
                     </a>
                 </li>
@@ -131,6 +131,35 @@
                 }).catch((error) => {
                 });
             },
+			showHideSlide:function(event){
+				event.preventDefault();
+				$("body").toggleClass("mini-navbar");
+				this.smoothlyMenu();
+			},
+			smoothlyMenu:function () {
+				if (!$('body').hasClass('mini-navbar') || $('body').hasClass('body-small')) {
+					// Hide menu in order to smoothly turn on when maximize menu
+					$('#side-menu').hide();
+					// For smoothly turn on menu
+					setTimeout(
+						function () {
+							$('#side-menu').fadeIn(400);
+						}, 200);
+				} else if ($('body').hasClass('fixed-sidebar')) {
+					$('#side-menu').hide();
+					setTimeout(
+						function () {
+							$('#side-menu').fadeIn(400);
+						}, 100);
+				} else {
+					// Remove all inline style from jquery fadeIn function to reset menu state
+					$('#side-menu').removeAttr('style');
+				}
+			},
+			showHideRightSlide:function(event){
+				event.preventDefault();
+				$('#right-sidebar').toggleClass('sidebar-open');
+			}
         }
     }
 </script>

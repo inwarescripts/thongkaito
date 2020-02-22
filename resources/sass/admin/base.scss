@@ -38,6 +38,7 @@ textarea{
     font-size: 13px !important;
     outline: 0 none;
     border-radius: 4px 4px 4px 4px !important;
+	height:35px !important;
 }
 
 button:focus {
@@ -151,7 +152,7 @@ textarea {
 	font-family: $font-roboto-medium;
 	border-bottom: 1px dotted #ccc;
     min-height: 35px;
-    padding: 0px;
+    padding: 5px 10px 10px 5px;
     margin: 5px!important;
     display: flex;
 	label {
