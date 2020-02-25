@@ -5,6 +5,9 @@
                 <div class="ibox ">
                     <IboxHeader>
                         <template v-slot:iboxAction>
+							<router-link :to="{ name: 'users' }" class="btn bg-gray ">
+								<i class="fa fa-backward" aria-hidden="true"></i> 
+							</router-link>
                             <button class="btn btn-blue">
 								<i class="fa fa-plus-square" aria-hidden="true"></i> 
 							</button>

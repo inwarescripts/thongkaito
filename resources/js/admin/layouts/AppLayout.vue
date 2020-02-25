@@ -1,5 +1,5 @@
 <template>
-    <div id="wrapper">
+    <div id="wrapper-admin">
         <SlideBarMenu></SlideBarMenu>
         <div id="page-wrapper" class="gray-bg">
             <Header></Header>
