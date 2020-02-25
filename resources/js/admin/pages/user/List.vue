@@ -26,7 +26,14 @@
                             <table class="table table-striped table-bordered table-hover table-list ">
                                 <thead>
                                 <tr>
-                                    <th><input type="checkbox"/></th>
+                                    <th class="text-center">
+										<div class="checkbox c-checkbox">
+											<label>
+											  <input type="checkbox" />
+											 <span class="fa fa-paw"></span>
+											</label>
+										</div>
+									</th>
                                     <th>Name</th>
                                     <th>Image</th>
                                     <th>Email</th>
@@ -39,8 +46,15 @@
                                 </thead>
                                 <tbody>
                                 <tr v-if="users.data.length" v-for="user in users.data">
-                                    <td><input type="checkbox"/></td>
-                                    <td>{{user.name}}</td>
+                                    <td class="text-center">
+										<div class="checkbox c-checkbox">
+											<label>
+											  <input type="checkbox" />
+											  <span class="fa fa-check"></span>
+											</label>
+										</div>
+									</td>
+                                    <td><a href="#">{{user.name}}</a></td>
                                     <td><img :src="'../../images/admin/'+user.avatar_img"/></td>
                                     <td>{{user.email}}</td>
                                     <td class="center">{{user.sex}}</td>
@@ -59,7 +73,14 @@
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th><input type="checkbox"/></th>
+                                    <th class="text-center">
+										<div class="checkbox c-checkbox">
+											<label>
+											  <input type="checkbox" />
+											  <span class="fa fa-paw"></span>
+											</label>
+										</div>
+									</th>
                                     <th>Name</th>
                                     <th>Image</th>
                                     <th>Email</th>

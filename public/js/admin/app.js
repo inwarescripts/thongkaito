@@ -12873,6 +12873,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Dash',
   components: {},
@@ -62347,7 +62368,11 @@ var render = function() {
                             ? _c("tr", [
                                 _vm._m(1, true),
                                 _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(user.name))]),
+                                _c("td", [
+                                  _c("a", { attrs: { href: "#" } }, [
+                                    _vm._v(_vm._s(user.name))
+                                  ])
+                                ]),
                                 _vm._v(" "),
                                 _c("td", [
                                   _c("img", {
@@ -62431,7 +62456,15 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_c("input", { attrs: { type: "checkbox" } })]),
+        _c("th", { staticClass: "text-center" }, [
+          _c("div", { staticClass: "checkbox c-checkbox" }, [
+            _c("label", [
+              _c("input", { attrs: { type: "checkbox" } }),
+              _vm._v(" "),
+              _c("span", { staticClass: "fa fa-paw" })
+            ])
+          ])
+        ]),
         _vm._v(" "),
         _c("th", [_vm._v("Name")]),
         _vm._v(" "),
@@ -62455,7 +62488,15 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", [_c("input", { attrs: { type: "checkbox" } })])
+    return _c("td", { staticClass: "text-center" }, [
+      _c("div", { staticClass: "checkbox c-checkbox" }, [
+        _c("label", [
+          _c("input", { attrs: { type: "checkbox" } }),
+          _vm._v(" "),
+          _c("span", { staticClass: "fa fa-check" })
+        ])
+      ])
+    ])
   },
   function() {
     var _vm = this
@@ -62483,7 +62524,15 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("tfoot", [
       _c("tr", [
-        _c("th", [_c("input", { attrs: { type: "checkbox" } })]),
+        _c("th", { staticClass: "text-center" }, [
+          _c("div", { staticClass: "checkbox c-checkbox" }, [
+            _c("label", [
+              _c("input", { attrs: { type: "checkbox" } }),
+              _vm._v(" "),
+              _c("span", { staticClass: "fa fa-paw" })
+            ])
+          ])
+        ]),
         _vm._v(" "),
         _c("th", [_vm._v("Name")]),
         _vm._v(" "),
