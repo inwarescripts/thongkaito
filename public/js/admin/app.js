@@ -12724,6 +12724,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Dash',
   components: {},
@@ -60132,7 +60135,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "wrapper" } },
+    { attrs: { id: "wrapper-admin" } },
     [
       _c("SlideBarMenu"),
       _vm._v(" "),
@@ -61850,6 +61853,20 @@ var render = function() {
                     key: "iboxAction",
                     fn: function() {
                       return [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "btn bg-gray ",
+                            attrs: { to: { name: "users" } }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "fa fa-backward",
+                              attrs: { "aria-hidden": "true" }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
                         _c("button", { staticClass: "btn btn-blue" }, [
                           _c("i", {
                             staticClass: "fa fa-plus-square",

@@ -1,16 +1,26 @@
 #wrapper-admin{
 	.navbar.navbar-static-top{
-		background-color: #3a4149;
-		border-bottom: 1px solid #23282c;
+		background-color: #1cc09f;
+		border-bottom: 1px solid #1ab394;
 		color:#FFFFFF;
+		.navbar-header a{
+			background-color: #f26c61;
+			border-color: #f26c61;
+		}
+		.text-muted {
+			color: #FFFFFF !important;
+		}
+		.nav.navbar-right > li > a{
+			color:#FFFFFF;
+		}
 	}
 	.ibox{
 	    border-radius: 10px;
 		overflow: hidden;
 	}
 	.footer{
-		background-color: #3a4149;
-		border-top: 1px solid #23282c;
+		background-color: #1cc09f;
+		border-top: 1px solid #1ab394;
 		color:#FFFFFF;
 	}
 }
