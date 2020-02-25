@@ -35,7 +35,7 @@
                                     <div class="row">
                                         <div class="col-md-4 col-xl-3">
 											<fieldset class="user-avatar">
-												<img :src="'../../images/admin/a4.jpg'"/>
+												<img :src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/20625/avatar-bg.png'"/>
 											</fieldset>
                                         </div>
                                         <div class="col-md-8 col-xl-9">

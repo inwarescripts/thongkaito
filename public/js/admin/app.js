@@ -61947,7 +61947,10 @@ var render = function() {
                               _c("div", { staticClass: "col-md-4 col-xl-3" }, [
                                 _c("fieldset", { staticClass: "user-avatar" }, [
                                   _c("img", {
-                                    attrs: { src: "../../images/admin/a4.jpg" }
+                                    attrs: {
+                                      src:
+                                        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/20625/avatar-bg.png"
+                                    }
                                   })
                                 ])
                               ]),
